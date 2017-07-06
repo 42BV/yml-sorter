@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const argv = require("yargs")
   .usage("Usage: yml-sorter [options]")
   .example(

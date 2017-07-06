@@ -1,7 +1,11 @@
 {
   "name": "yml-sorter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sorts yml files alphabetically",
+  "preferGlobal": true,
+  "bin": {
+    "yml-sorter": "index.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
