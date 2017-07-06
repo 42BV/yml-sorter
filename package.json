@@ -1,6 +1,6 @@
 {
   "name": "yml-sorter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sorts yml files alphabetically",
   "preferGlobal": true,
   "bin": {

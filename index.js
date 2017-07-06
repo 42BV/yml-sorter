@@ -11,7 +11,7 @@ const argv = require("yargs")
     "Sorts and writes the output to dragons.yml"
   )
   .example(
-    "yml-sorter --input application-yml -dry-run",
+    "yml-sorter --input application-yml --dry-run",
     "Writes the output to the terminal"
   )
   .describe("input", "The yml file which needs to be sorted")

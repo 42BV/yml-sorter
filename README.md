@@ -22,7 +22,7 @@ Options:
 Examples:
   yml-sorter --input application-yml                       Sorts the file application.yml alphabetically.
   yml-sorter --input application-yml --output dragons.yml  Sorts and writes the output to dragons.yml
-  yml-sorter --input application-yml -dry-run              Writes the output to the terminal
+  yml-sorter --input application-yml --dry-run             Writes the output to the terminal
 
 With love from 42.nl
 ```
