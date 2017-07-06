@@ -1,0 +1,28 @@
+{
+  "name": "yml-sorter",
+  "version": "0.0.1",
+  "description": "Sorts yml files alphabetically",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/42BV/mad-spring-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/42BV/mad-spring-connect/issues"
+  },
+  "homepage": "https://github.com/42BV/mad-spring-connect#readme",
+  "keywords": [
+    "yml",
+    "sort",
+    "alphabetically"
+  ],
+  "author": "Maarten Hus",
+  "dependencies": {
+    "js-yaml": "3.8.4",
+    "yargs": "8.0.2"
+  }
+}
