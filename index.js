@@ -45,7 +45,7 @@ try {
   if (argv["dry-run"]) {
     console.log(input);
   } else {
-    const output = argv.output === false ? argv.input : argv.output;
+    const output = argv.output ? argv.output : argv.input;
 
     fs.writeFile(output, input, error => {
       if (error) {
