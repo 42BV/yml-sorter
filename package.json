@@ -13,12 +13,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/42BV/mad-spring-connect.git"
+    "url": "git+https://github.com/42BV/yml-sorter.git"
   },
   "bugs": {
-    "url": "https://github.com/42BV/mad-spring-connect/issues"
+    "url": "https://github.com/42BV/yml-sorter/issues"
   },
-  "homepage": "https://github.com/42BV/mad-spring-connect#readme",
+  "homepage": "https://github.com/42BV/yml-sorter#readme",
   "keywords": [
     "yml",
     "sort",
