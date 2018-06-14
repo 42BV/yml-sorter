@@ -42,8 +42,8 @@ try {
 
   const input = yaml.safeDump(doc, { sortKeys: true });
 
-  if (argv["dry-run"]) {
-    console.log(input);
+  if (argv["dry-run"] || argv.output === "-") {
+    process.stdout.write(input);
   } else {
     const output = argv.output ? argv.output : argv.input;
 
