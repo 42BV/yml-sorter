@@ -58,7 +58,7 @@ try {
 
     fs.writeFile(output, input, error => {
       if (error) {
-        return console.error(errore);
+        return console.error(error);
       }
     });
   }
