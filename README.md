@@ -18,6 +18,7 @@ Options:
   --output, -o    The file to wich to write the output
   --dry-run, -d   Only outputs the proposed sort to the terminal  [default: false]
   --indent, --id  Indentation width to use (in spaces)  [default: 2]
+  --ignoreKeys, --ik Prefix for keys that will be ignored
   -h, --help      Show help  [boolean]
 
 Examples:
@@ -25,6 +26,7 @@ Examples:
   yml-sorter --input application-yml --output dragons.yml  Sorts and writes the output to dragons.yml
   yml-sorter --input application-yml --dry-run             Writes the output to the terminal
   yml-sorter --input application-yml --indent 4            Indent with 4 spaces
+  yml-sorter --ignoreKeys abc def                          Prefixed keys will be excluded from sorting
 
 With love from 42.nl
 ```

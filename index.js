@@ -18,6 +18,10 @@ const argv = require("yargs")
     "yml-sorter --input application-yml --indent 4",
     "Indent with 4 spaces"
   )
+  .example(
+    "yml-sorter --ignoreKeys abc def",
+    "Excludes from sorting keys with given prefix"
+  )
   .describe("input", "The yml file which needs to be sorted")
   .option("input", {
     alias: "i",
@@ -36,6 +40,12 @@ const argv = require("yargs")
     alias: "id",
     default: 2
   })
+  .describe("ignoreKeys", "Prefix for keys that will be ignored")
+  .option("ignoreKeys", {
+    alias: "ik",
+    type: 'array',
+    default: null
+  })
   .demandOption(["input"])
   .help("h")
   .alias("h", "help")
@@ -45,11 +55,18 @@ const argv = require("yargs")
 yaml = require("js-yaml");
 fs = require("fs");
 
+
+
+
 // Get document, or throw exception on error
 try {
   const doc = yaml.safeLoad(fs.readFileSync(argv.input, "utf8"));
 
-  const input = yaml.safeDump(doc, { sortKeys: true, indent: argv.indent });
+  const ignoreKeys = argv.ignoreKeys;
+  const input = yaml.safeDump(doc, { 
+	  sortKeys: ignoreKeys != null 
+	  	? customComparator(ignoreKeys) 
+	  	: true, indent: argv.indent });
 
   if (argv["dry-run"]) {
     console.log(input);
@@ -65,3 +82,28 @@ try {
 } catch (error) {
   console.error(error);
 }
+
+
+function customComparator(ignoreKeys) {
+    return function customSort(a, b) {
+	  //allow ignored keys
+	  if(ignoreKeys != null) {
+		  for(ignoredKey of ignoreKeys) {
+			  if(a.startsWith(ignoredKey)) {
+				  return 0
+			  }
+		  }
+	  }
+	  if (a < b) {
+	    return -1;
+	  }
+	  if (a > b) {
+	    return 1;
+	  }
+	  return 0;
+    }
+}
+
+
+
+
