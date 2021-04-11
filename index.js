@@ -29,6 +29,7 @@ const argv = require("yargs")
   .describe("dry-run", "Only outputs the proposed sort to the terminal")
   .option("dry-run", {
     alias: "d",
+    type: "boolean",
     default: false
   })
   .describe("indent", "Indentation width to use (in spaces)")
