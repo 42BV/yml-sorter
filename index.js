@@ -18,24 +18,24 @@ const argv = require("yargs")
     "yml-sorter --input application-yml --indent 4",
     "Indent with 4 spaces"
   )
-  .describe("input", "The yml file which needs to be sorted")
   .option("input", {
     alias: "i",
+    describe: "The yml file which needs to be sorted"
   })
-  .describe("output", "The file to wich to write the output")
   .option("output", {
     alias: "o",
+    describe: "The file to wich to write the output"
   })
-  .describe("dry-run", "Only outputs the proposed sort to the terminal")
   .option("dry-run", {
     alias: "d",
     type: "boolean",
-    default: false
+    default: false,
+    describe: "Only outputs the proposed sort to the terminal"
   })
-  .describe("indent", "Indentation width to use (in spaces)")
   .option("indent", {
     alias: "id",
-    default: 2
+    default: 2,
+    describe: "Indentation width to use (in spaces)"
   })
   .demandOption(["input"])
   .help("h")
@@ -48,9 +48,9 @@ const fs = require("fs");
 
 // Get document, or throw exception on error
 try {
-  const doc = yaml.safeLoad(fs.readFileSync(argv.input, "utf8"));
+  const doc = yaml.load(fs.readFileSync(argv.input, "utf8"));
 
-  const input = yaml.safeDump(doc, { sortKeys: true, indent: argv.indent });
+  const input = yaml.dump(doc, { sortKeys: true, indent: argv.indent });
 
   if (argv["dry-run"]) {
     console.log(input);

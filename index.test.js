@@ -234,12 +234,12 @@ describe("help flag", () => {
       "Usage: yml-sorter [options]
 
       Options:
-        --version       Show version number  [boolean]
-        --input, -i  [required]
-        --output, -o
-        --dry-run, -d  [boolean] [default: false]
-        --indent, --id  [default: 2]
-        -h, --help      Show help  [boolean]
+            --version       Show version number  [boolean]
+        -i, --input         The yml file which needs to be sorted  [required]
+        -o, --output        The file to wich to write the output
+        -d, --dry-run       Only outputs the proposed sort to the terminal  [boolean] [default: false]
+            --indent, --id  Indentation width to use (in spaces)  [default: 2]
+        -h, --help          Show help  [boolean]
 
       Examples:
         yml-sorter --input application-yml                       Sorts the file application.yml alphabetically.
@@ -258,12 +258,12 @@ describe("help flag", () => {
       "Usage: yml-sorter [options]
 
       Options:
-        --version       Show version number  [boolean]
-        --input, -i  [required]
-        --output, -o
-        --dry-run, -d  [boolean] [default: false]
-        --indent, --id  [default: 2]
-        -h, --help      Show help  [boolean]
+            --version       Show version number  [boolean]
+        -i, --input         The yml file which needs to be sorted  [required]
+        -o, --output        The file to wich to write the output
+        -d, --dry-run       Only outputs the proposed sort to the terminal  [boolean] [default: false]
+            --indent, --id  Indentation width to use (in spaces)  [default: 2]
+        -h, --help          Show help  [boolean]
 
       Examples:
         yml-sorter --input application-yml                       Sorts the file application.yml alphabetically.
